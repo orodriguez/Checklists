@@ -6,6 +6,18 @@ namespace Checklist.Tests;
 public class CreateChecklistTests : ApiTest
 {
     [Fact]
+    public void ReturnsResponseWithId()
+    {
+        var request = new ValidCreateChecklistRequest();
+        
+        var response = Api.Checklist.Create(request);
+
+        var checkList = Assert.IsType<CreateChecklistResponse.Success>(response);
+        
+        Assert.NotEqual(0, checkList.Id);
+    }
+    
+    [Fact]
     public void ReturnsResponseWithTitle()
     {
         var request = new ValidCreateChecklistRequest { Title = "Definition of Done" };
