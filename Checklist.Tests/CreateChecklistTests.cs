@@ -6,7 +6,7 @@ namespace Checklist.Tests;
 public class CreateChecklistTests : ApiTest
 {
     [Fact]
-    public void Title()
+    public void ReturnsResponseWithTitle()
     {
         var request = new ValidCreateChecklistRequest { Title = "Definition of Done" };
         
@@ -18,19 +18,22 @@ public class CreateChecklistTests : ApiTest
     }
     
     [Fact]
-    public void Items_One()
+    public void ReturnsResponseWithItems()
     {
         var request = new ValidCreateChecklistRequest
         {
-            Items = new[] { new CreateChecklistRequest.Item("Tests Passing") }
+            Items = new[]
+            {
+                new CreateChecklistRequest.Item("Code Completed"),
+                new CreateChecklistRequest.Item("Tests Passing")
+            }
         };
         
         var response = Api.Checklist.Create(request);
 
         var checkList = Assert.IsType<CreateChecklistResponse.Success>(response);
 
-        var item = Assert.Single(checkList.Items);
-        
-        Assert.Equal("Tests Passing", item.Text);
+        Assert.Equal(new[] { "Code Completed", "Tests Passing" }, 
+            checkList.Items.Select(item => item.Text));
     }
 }
