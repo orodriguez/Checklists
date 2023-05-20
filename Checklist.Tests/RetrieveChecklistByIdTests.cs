@@ -31,4 +31,24 @@ public class RetrieveChecklistByIdTests : ApiTest
         
         Assert.Equal(request.Title, checklist.Title);
     }
+    
+    [Fact]
+    public void Items()
+    {
+        var item = new CreateChecklistRequest.Item("Tests Passing");
+        
+        var request = new ValidCreateChecklistRequest
+        {
+            Items = new [] { item }
+        };
+
+        var id = Assert.IsType<ValueResult<int>>(Api.Checklist.Create(request)).Value;
+
+        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(Api.Checklist.ById(id)).Value;
+
+        var createdItem = Assert.Single(checklist.Items);
+        
+        Assert.NotEqual(0, createdItem.Id);
+        Assert.Equal("Tests Passing", item.Text);
+    }
 }
