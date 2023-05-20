@@ -1,4 +1,4 @@
-using Checklist.Tests.Core;
+using Checklist.Core;
 
 namespace Checklist.Tests.Samples;
 

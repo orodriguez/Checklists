@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.Tests", "Checklist.Tests\Checklist.Tests.csproj", "{47B80053-1969-4F48-AEFF-FF58229E6F7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.Storage.EF", "Checklist.Storage.EF\Checklist.Storage.EF.csproj", "{99BF31AF-3063-49CF-80A2-14ABEFE35365}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.Core", "Checklist.Core\Checklist.Core.csproj", "{E26381B1-B743-4512-B1AD-81B58288B699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.DI", "Checklist.DI\Checklist.DI.csproj", "{6CFC3F3E-8173-4F87-B42A-B5E11A7877F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{47B80053-1969-4F48-AEFF-FF58229E6F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B80053-1969-4F48-AEFF-FF58229E6F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B80053-1969-4F48-AEFF-FF58229E6F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99BF31AF-3063-49CF-80A2-14ABEFE35365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BF31AF-3063-49CF-80A2-14ABEFE35365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BF31AF-3063-49CF-80A2-14ABEFE35365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BF31AF-3063-49CF-80A2-14ABEFE35365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E26381B1-B743-4512-B1AD-81B58288B699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E26381B1-B743-4512-B1AD-81B58288B699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E26381B1-B743-4512-B1AD-81B58288B699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E26381B1-B743-4512-B1AD-81B58288B699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFC3F3E-8173-4F87-B42A-B5E11A7877F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFC3F3E-8173-4F87-B42A-B5E11A7877F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFC3F3E-8173-4F87-B42A-B5E11A7877F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFC3F3E-8173-4F87-B42A-B5E11A7877F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

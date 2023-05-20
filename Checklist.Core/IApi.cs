@@ -1,4 +1,4 @@
-namespace Checklist.Tests.Core;
+namespace Checklist.Core;
 
 public interface IApi
 {

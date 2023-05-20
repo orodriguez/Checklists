@@ -1,4 +1,4 @@
-namespace Checklist.Tests.Core;
+namespace Checklist.Core;
 
 public record CreateChecklistRequest(string Title, IEnumerable<CreateChecklistRequest.Item> Items)
 {

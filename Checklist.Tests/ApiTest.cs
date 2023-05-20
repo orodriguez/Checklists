@@ -1,5 +1,5 @@
-using Checklist.Tests.Core;
-using Checklist.Tests.DI;
+using Checklist.Core;
+using Checklist.DI;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Checklist.Tests;
