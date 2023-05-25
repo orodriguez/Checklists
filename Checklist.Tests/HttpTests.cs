@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json;
+using Checklist.Core;
 using Checklist.WebApi.Controllers;
 using Microsoft.AspNetCore.Mvc.Testing;
 
@@ -26,11 +27,14 @@ public class HttpTests : IClassFixture<WebApplicationFactory<ChecklistsControlle
         
         var stringAsync = await response.Content.ReadAsStringAsync();
 
-        var checklist = JsonSerializer.Deserialize<Core.Checklist>(stringAsync, new JsonSerializerOptions
+        var result = JsonSerializer.Deserialize<Result>(stringAsync, new JsonSerializerOptions
         {
-            PropertyNameCaseInsensitive = true
+            PropertyNameCaseInsensitive = true,
+            
         });
+
+        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(result);
         
-        Assert.Equal("Hello", checklist.Title);
+        Assert.Equal("Hello", checklist.Value.Title);
     }
 }
