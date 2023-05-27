@@ -6,11 +6,11 @@ namespace Checklist.Tests;
 public class RetrieveChecklistByIdTests : ApiTest
 {
     [Fact]
-    public void Id()
+    public async Task Id()
     {
         var request = new ValidCreateChecklistRequest();
         
-        var response = Api.Checklist.Create(request);
+        var response = await Api.Checklist.Create(request);
 
         var id = Assert.IsType<ValueResult<int>>(response).Value;
         
@@ -18,22 +18,22 @@ public class RetrieveChecklistByIdTests : ApiTest
     }
     
     [Fact]
-    public void Title()
+    public async Task Title()
     {
         var request = new ValidCreateChecklistRequest
         {
             Title = "Definition of Done"
         };
 
-        var id = Assert.IsType<ValueResult<int>>(Api.Checklist.Create(request)).Value;
+        var id = Assert.IsType<ValueResult<int>>(await Api.Checklist.Create(request)).Value;
 
-        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(Api.Checklist.ById(id)).Value;
+        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(await Api.Checklist.ById(id)).Value;
         
         Assert.Equal(request.Title, checklist.Title);
     }
     
     [Fact]
-    public void Items()
+    public async Task Items()
     {
         var item = new CreateChecklistRequest.Item("Tests Passing");
         
@@ -42,9 +42,9 @@ public class RetrieveChecklistByIdTests : ApiTest
             Items = new [] { item }
         };
 
-        var id = Assert.IsType<ValueResult<int>>(Api.Checklist.Create(request)).Value;
+        var id = Assert.IsType<ValueResult<int>>(await Api.Checklist.Create(request)).Value;
 
-        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(Api.Checklist.ById(id)).Value;
+        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(await Api.Checklist.ById(id)).Value;
 
         var createdItem = Assert.Single(checklist.Items);
         

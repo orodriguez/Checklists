@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.DI", "Checklist.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.WebApi", "Checklist.WebApi\Checklist.WebApi.csproj", "{6C6D435A-6E4E-499F-9161-9AF041D8D547}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checklist.Client", "Checklist.Client\Checklist.Client.csproj", "{F2E07F47-DE41-43F8-A2B0-EB6BA325389A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{6C6D435A-6E4E-499F-9161-9AF041D8D547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C6D435A-6E4E-499F-9161-9AF041D8D547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C6D435A-6E4E-499F-9161-9AF041D8D547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E07F47-DE41-43F8-A2B0-EB6BA325389A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E07F47-DE41-43F8-A2B0-EB6BA325389A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E07F47-DE41-43F8-A2B0-EB6BA325389A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E07F47-DE41-43F8-A2B0-EB6BA325389A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

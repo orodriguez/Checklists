@@ -13,17 +13,17 @@ public class ChecklistService : IChecklistService
         _responseFactory = responseFactory;
     }
 
-    public Result Create(CreateChecklistRequest request)
+    public Task<Result> Create(CreateChecklistRequest request)
     {
         var checklist = _entityFactory.Create(request);
         _checklists.Add(checklist);
-        return new ValueResult<int>(checklist.Id);
+        return new Task<Result>(() => new ValueResult<int>(checklist.Id));
     }
 
-    public Result ById(int id)
+    public Task<Result> ById(int id)
     {
         var checklist = _checklists.ById(id);
         var response = _responseFactory.Create(checklist);
-        return new ValueResult<Checklist>(response);
+        return new Task<Result>(() => new ValueResult<Checklist>(response));
     }
 }

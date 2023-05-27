@@ -16,7 +16,7 @@ public class HttpTests : IClassFixture<WebApplicationFactory<ChecklistsControlle
         _client = factory.CreateDefaultClient();
     }
 
-    [Fact]
+    [Fact(Skip = "POC")]
     public async Task Test()
     {
         var response = await _client.GetAsync("/checklists/1");

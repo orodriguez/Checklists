@@ -29,6 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Checklist.Client\Checklist.Client.csproj" />
       <ProjectReference Include="..\Checklist.Core\Checklist.Core.csproj" />
       <ProjectReference Include="..\Checklist.DI\Checklist.DI.csproj" />
       <ProjectReference Include="..\Checklist.WebApi\Checklist.WebApi.csproj" />
