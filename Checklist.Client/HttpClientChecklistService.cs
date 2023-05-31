@@ -10,24 +10,21 @@ public class HttpClientChecklistService : IChecklistService
 {
     private readonly HttpClient _client;
 
-    public HttpClientChecklistService(HttpClient client)
-    {
-        _client = client;
-    }
+    public HttpClientChecklistService(HttpClient client) => _client = client;
 
     public async Task<Result> Create(CreateChecklistRequest request)
     {
         var response = await _client.PostAsync("/checklists", HttpContent(request));
-        return await ResultFromHttpResponse(response);
+        return await Result(response);
     }
 
     public async Task<Result> ById(int id)
     {
-        var response = await _client.GetAsync("/checklists");
-        return await ResultFromHttpResponse(response);
+        var response = await _client.GetAsync($"/checklists/{id}");
+        return await Result(response);
     }
 
-    private static async Task<Result> ResultFromHttpResponse(HttpResponseMessage response) =>
+    private static async Task<Result> Result(HttpResponseMessage response) =>
         response.StatusCode switch
         {
             HttpStatusCode.OK => new ValueResult<int>(await Deserialize(response)),
