@@ -42,9 +42,11 @@ public class RetrieveChecklistByIdTests : ApiTest
             Items = new [] { item }
         };
 
-        var id = Assert.IsType<ValueResult<int>>(await Api.Checklist.Create(request)).Value;
+        var createResult = await Api.Checklist.Create(request);
+        var id = Assert.IsType<ValueResult<int>>(createResult).Value;
 
-        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(await Api.Checklist.ById(id)).Value;
+        var byIdByIdResult = await Api.Checklist.ById(id);
+        var checklist = Assert.IsType<ValueResult<Core.Checklist>>(byIdByIdResult).Value;
 
         var createdItem = Assert.Single(checklist.Items);
         

@@ -7,10 +7,13 @@ namespace Checklist.WebApi.Controllers;
 [Route("[controller]")]
 public class ChecklistsController : ControllerBase
 {
+    [HttpPost]
+    public ActionResult<int> Create(CreateChecklistRequest request) => Ok(1);
+
     [HttpGet("{id}")]
     public ActionResult<Core.Checklist> Get(int id)
     {
-        var checklist = new Core.Checklist(1, "Hello", new[] { new Core.Checklist.Item(2, "World") });
-        return Ok(new ValueResult<Core.Checklist>(checklist));
+        var checklist = new Core.Checklist(1, "Definition of Done", new[] { new Core.Checklist.Item(2, "World") });
+        return Ok(checklist);
     }
 }
